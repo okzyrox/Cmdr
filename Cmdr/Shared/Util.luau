@@ -206,7 +206,7 @@ end
 --[=[
 	Splits a string by space but taking into account quoted sequences which will be treated as a single argument.
 ]=]
-function Util.SplitString(text: string, max: number): { string }
+function Util.SplitString(text: string, max: number?): { string }
 	text = encodeControlChars(text)
 	max = max or math.huge
 	local t = {}
