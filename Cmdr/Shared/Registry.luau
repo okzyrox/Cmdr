@@ -154,6 +154,7 @@ local Registry = {
 		"ClientRun",
 		"Data",
 		"Group",
+		"Permissions",
 		"Guards",
 	}),
 	CommandArgProps = Util.MakeDictionary({ "Name", "Type", "Description", "Optional", "Default" }),
