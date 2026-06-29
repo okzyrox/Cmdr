@@ -1,5 +1,4 @@
 local RunService = game:GetService("RunService")
-local CmdrTypes = require(script.CmdrTypes)
 local Util = require(script.Shared:WaitForChild("Util"))
 local Types = require(script.Shared:WaitForChild("CmdrTypes"))
 
@@ -71,4 +70,4 @@ Cmdr.RemoteFunction.OnServerInvoke = function(player, text, options)
 	return Cmdr.Dispatcher:EvaluateAndRun(text, player, options)
 end
 
-return Cmdr :: CmdrTypes.CmdrServer
+return Cmdr :: Types.CmdrServer
