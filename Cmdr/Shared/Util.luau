@@ -1,4 +1,5 @@
 local TextService = game:GetService("TextService")
+local Types = require(script.Parent.CmdrTypes)
 
 --[=[
 	@class Util
@@ -9,7 +10,7 @@ local TextService = game:GetService("TextService")
 	This page is incomplete and some functions are missing. You might want to refer to [the current documentation](https://eryn.io/Cmdr/api/Util.html).
 	:::
 ]=]
-local Util = {}
+local Util = {} :: Types.Util
 
 --[=[
 	Takes an array and flips its values into dictionary keys with value of true.

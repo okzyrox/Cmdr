@@ -3,6 +3,7 @@ local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 local Util = require(script.Parent.Util)
 local Command = require(script.Parent.Command)
+local Types = require(script.Parent.CmdrTypes)
 
 local HISTORY_SETTING_NAME = "CmdrCommandHistory"
 local displayedBeforeRunHookWarning = false
@@ -29,7 +30,7 @@ local displayedBeforeRunHookWarning = false
 local Dispatcher = {
 	Cmdr = nil,
 	Registry = nil,
-}
+} :: Types.Dispatcher
 
 --[=[
 	@within Dispatcher

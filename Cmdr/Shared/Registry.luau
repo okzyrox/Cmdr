@@ -1,6 +1,7 @@
 local RunService = game:GetService("RunService")
 
 local Util = require(script.Parent.Util)
+local Types = require(script.Parent.CmdrTypes)
 
 --[=[
 	@class Registry
@@ -568,8 +569,8 @@ function Registry:FlushAutoExecBuffer()
 	self.AutoExecBuffer = {}
 end
 
-return function(cmdr)
+return function(cmdr): Types.Registry
 	Registry.Cmdr = cmdr
 
-	return Registry
+	return Registry :: any
 end

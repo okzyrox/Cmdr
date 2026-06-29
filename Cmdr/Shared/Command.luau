@@ -1,6 +1,7 @@
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 local Argument = require(script.Parent.Argument)
+local Types = require(script.Parent.CmdrTypes)
 
 local IsServer = RunService:IsServer()
 
@@ -14,7 +15,7 @@ local IsServer = RunService:IsServer()
 ]=]
 
 -- TODO: Add moonwave annotations
-local Command = {}
+local Command = {} :: Types.CommandContext
 Command.__index = Command
 
 -- Returns a new CommandContext, an object which is created for every command validation.
