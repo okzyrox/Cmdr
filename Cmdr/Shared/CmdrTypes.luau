@@ -378,7 +378,7 @@ export type CommandContext = {
         
         You should still return a string from the command implementation when you are finished, `Reply` should only be used to send additional messages before the final message.
     ]=]
-    Reply: (ctx: CommandContext, text: string, color: Color3?) -> (),
+    Reply: (ctx: CommandContext, text: string, options: (Color3 | {Color: Color3?, RichText: boolean?})?) -> (),
     
     --[=[
         Returns `true` if the command has an implementation on this machine. 
