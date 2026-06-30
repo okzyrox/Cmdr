@@ -142,6 +142,7 @@ export type Registry = {
     ]=]
     RegisterHook: (
         self: Registry,
+        hookName: HookType,
         callback: (CommandContext) -> string?,
         priority: number?
     ) -> (),
