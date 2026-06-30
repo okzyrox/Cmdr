@@ -70,4 +70,15 @@ Cmdr.RemoteFunction.OnServerInvoke = function(player, text, options)
 	return Cmdr.Dispatcher:EvaluateAndRun(text, player, options)
 end
 
-return Cmdr :: Types.CmdrServer
+export type ArgumentContext = Types.ArgumentContext
+export type CommandContext = Types.CommandContext
+export type CommandDefinition = Types.CommandDefinition
+export type ArgumentDefinition = Types.ArgumentDefinition
+export type TypeDefinition<T> = Types.TypeDefinition<T>
+export type CmdrServer = Types.CmdrServer
+export type CmdrClient = Types.CmdrClient
+export type Registry = Types.Registry
+export type Dispatcher = Types.Dispatcher
+export type Util = Types.Util
+
+return Cmdr :: CmdrServer

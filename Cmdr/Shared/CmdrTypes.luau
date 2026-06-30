@@ -7,6 +7,41 @@ export type CmdrServer = {
     Dispatcher: Dispatcher,
     --- Refers to a table containing many useful utility functions.
     Util: Util,
+
+    --[=[
+        Registers a command definition and its server equivalent. Handles replicating the definition to the client.
+
+        **This only works when running on the Server.**
+    ]=]
+    RegisterCommandsIn: (self: CmdrServer, container: Instance, filter: ((CommandDefinition) -> boolean)?) -> (),
+
+    --[=[
+        Registers all the types from within the given container, on both the server and client.
+
+        **This only works when running on the Server.**
+    ]=]
+    RegisterTypesIn: (self: CmdrServer, container: Instance) -> (),
+
+    --[=[
+        Registers a hook on the current realm (server/client). 
+        
+        This should probably be ran on the server or in a hook module script, but can also work on the client.
+
+        Hooks run in order of priority from lowest (running first) to highest.
+    ]=]
+    RegisterHooksIn: (self: CmdrServer, container: Instance) -> (),
+    
+    --[=[
+        Registers the default commands on both the server and client.
+
+        The optional arrayOrFunc parameter can be provided with:
+
+        1. an array of strings — this will limit registration to only commands which have their `Group` property set to this
+        2. a function which takes in a `CommandDefinition` and returns a boolean — only if true is returned will the command be registered
+        
+        **This only works when running on the Server.**
+    ]=]
+    RegisterDefaultCommands: (self: CmdrServer, arrayOrFunc: {string} | ((CommandDefinition) -> boolean)?) -> (),
 }
 
 
